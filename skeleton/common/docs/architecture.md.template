@@ -1,0 +1,37 @@
+# __PROJECT_NAME__ architecture
+
+이 프로젝트는 `__PRESET__` preset과 hexagonal architecture 규칙을 사용한다.
+
+## 기본 패키지
+
+```text
+__PACKAGE_PATH__/
+├── <slice>/
+│   ├── adapter/
+│   │   ├── in/                    # Web, scheduler, batch 진입점
+│   │   └── out/                   # Persistence, 외부 API 구현
+│   └── application/
+│       ├── domain/
+│       │   ├── model/             # Aggregate, Entity, Value Object
+│       │   └── service/           # Use case 구현
+│       └── port/
+│           ├── in/                # Inbound use case
+│           └── out/               # Outbound dependency contract
+└── global/                        # 여러 slice가 공유하는 최소 기반 코드
+```
+
+`batch` preset은 batch/metrics 성격에 맞게 `application.model`과
+`application.service` 패키지 규칙을 사용한다.
+
+## 자동 검증
+
+- DDD와 hexagonal layer 의존성
+- vertical slice 간 직접 참조
+- outbound port의 `Either` 반환
+- JPA entity와 repository 위치
+- adapter annotation과 경계 타입 위치
+- native SQL 및 `JdbcTemplate` 직접 사용 제한
+
+```bash
+./gradlew :app:architectureTest
+```

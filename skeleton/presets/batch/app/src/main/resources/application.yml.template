@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: __PROJECT_NAME__
+  datasource:
+    url: jdbc:h2:mem:__PROJECT_NAME__;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  batch:
+    job:
+      enabled: false
+
+management:
+  otlp:
+    metrics:
+      export:
+        enabled: false

@@ -1,0 +1,29 @@
+# __PROJECT_NAME__ development
+
+## 필수 환경
+
+- Java 25
+- 생성된 Gradle wrapper 사용
+
+## 실행
+
+```bash
+./gradlew :app:bootRun
+```
+
+`agent` preset은 `OPENAI_API_KEY`가 필요하다.
+
+## 검증
+
+```bash
+./gradlew :app:test
+./gradlew :app:architectureTest
+./gradlew :app:checkstyleMain
+./gradlew :app:build
+```
+
+`build`에는 Error Prone, javac lint, Checkstyle, 단위 테스트와 아키텍처 테스트가 포함된다.
+
+## API 문서
+
+실행 후 `/swagger-ui.html` 또는 `/v3/api-docs`를 확인한다.
