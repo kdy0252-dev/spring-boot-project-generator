@@ -24,4 +24,4 @@ build-logic/
 | 테스트 | `testcontainer`, Spring Modulith test |
 
 프로젝트 루트의 `./gradlew :app:build`를 실행하면 컴파일, 테스트,
-Checkstyle과 아키텍처 검증이 함께 수행된다.
+Checkstyle, 아키텍처 검증과 JaCoCo Line Coverage 70% 검증이 함께 수행된다.

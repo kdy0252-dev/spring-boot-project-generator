@@ -12,6 +12,7 @@
 
 모든 유형에 Gradle wrapper, `build-logic`, Checkstyle, Error Prone,
 OpenRewrite, jMolecules/ArchUnit, JaCoCo와 아키텍처 테스트가 생성된다.
+실제 애플리케이션 코드의 Line Coverage가 70% 미만이면 빌드가 실패한다.
 
 ## 사용법
 

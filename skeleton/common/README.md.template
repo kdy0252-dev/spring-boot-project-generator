@@ -34,7 +34,8 @@ __PROJECT_NAME__/
 ```
 
 모든 preset은 Checkstyle, Error Prone, OpenRewrite, jMolecules/ArchUnit,
-JaCoCo 및 SpringDoc 설정을 포함한다.
+JaCoCo 및 SpringDoc 설정을 포함한다. 부트스트랩·설정·생성 코드를 제외한
+Line Coverage가 70% 미만이면 빌드가 실패한다.
 
 ## 검증
 
@@ -42,6 +43,7 @@ JaCoCo 및 SpringDoc 설정을 포함한다.
 ./gradlew :app:build
 ./gradlew :app:architectureTest
 ./gradlew :app:checkstyleMain
+./gradlew :app:jacocoTestCoverageVerification
 ```
 
 ## 실행
